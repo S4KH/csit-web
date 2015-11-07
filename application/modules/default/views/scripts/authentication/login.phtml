@@ -1,0 +1,14 @@
+<div class="body">
+    <h4 style="margin: 2px;">Please Sign In</h4>
+    <hr/>
+    <div style="margin-top: 10px;">
+        <form method="post" action='' name="login_form">
+          <p><input type="text" class="span4" name="username" id="username" placeholder="<?php echo $this->translate->_('Нэвтрэх нэр');?>"></p>
+          <p><input type="password" class="span4" name="password" placeholder="<?php echo $this->translate->_('Нууц үг');?>"></p>
+          <p><input id="rme" style="float: left; margin-right: 10px;" type="checkbox" name="rMe" value="1" /></p>
+          <p><label class="string optional" for="user_remember_me"> <?php echo $this->translate->_('Намайг сана');?></label></p>
+          <p><button type="submit" class="btn btn-info"><?php echo $this->translate->_('Нэвтрэх');?></button>          
+          </p>
+        </form>
+    </div>
+</div>

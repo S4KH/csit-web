@@ -1,0 +1,12 @@
+<?php 
+	if ($this->controller=="oz"){		
+?>
+<img src="/sit/public/images/oz1.png" class="img-polaroid oz"  width="800">
+<ul class="nav nav-tabs" id="myTab">
+  <li <?php if($this->action=="home") echo "class='active'";?>><a href="<?php echo $this->baseUrl();?>/oz/home">Үйл явдал</a></li>
+  <li <?php if($this->action=="news") echo "class='active'";?>><a href="<?php echo $this->baseUrl();?>/oz/news">Зарлал</a></li>
+  <li <?php if($this->action=="members") echo "class='active'";?>><a href="<?php echo $this->baseUrl();?>/oz/members">Зөвлөлийн гишүүд</a></li>
+</ul>
+<?php 
+	}
+?>

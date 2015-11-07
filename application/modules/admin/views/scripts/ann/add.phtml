@@ -1,0 +1,185 @@
+<style>
+    table{
+        font-size:13px; 
+    }
+    input.editbox{
+        display:none;
+        width:100px; 
+        font-size:10px;   
+    }
+</style>
+<div class="body">
+<form id="login" class="form-horizontal" method="post" action="<?php echo $this->baseUrl();?>/admin/ann/add">
+    <legend><?php echo $this->translate->_('Шалгалтын хуваарь нэмэх');?></legend>
+    <div class="control-group">
+    <label class="control-label" for="lessonname"><?php echo $this->translate->_('Хичээлийн Нэр');?></label>
+    <div class="controls">
+      <input type="text" name="lessonname" id="lessonname" placeholder="<?php echo $this->translate->_('Хичээлийн Нэр');?>">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="classes"><?php echo $this->translate->_('Анги');?></label>
+    <div class="controls">
+      <input type="text" id="classes" name="classes" placeholder="<?php echo $this->translate->_('Анги');?>">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="edate"><?php echo $this->translate->_('Сар өдөр');?></label>
+    <div class="controls">
+      <input type="text" id="forDate" name="edate" placeholder="<?php echo $this->translate->_('Сар өдөр');?>">
+    </div>
+  </div>  
+  <div class="control-group">
+    <label class="control-label" for="etime"><?php echo $this->translate->_('Цаг');?></label>
+    <div class="controls">
+      <input type="text" id="forTime" name="etime" placeholder="<?php echo $this->translate->_('Цаг');?>">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="rno"><?php echo $this->translate->_('Өрөө');?></label>
+    <div class="controls">
+      <input type="text" id="room" name="rno" placeholder="<?php echo $this->translate->_('Өрөө');?>">
+    </div>
+  </div>
+  
+  <div class="control-group">
+        <div class="controls">
+          <select  id="toTeach" name="teach" multiple>
+              <?php 
+                    foreach ($this->teachc as $value) {
+                        echo "<option value ='$value->tid'>";
+                        echo $value->tname;
+                        echo '</option>'; 
+                    }
+              ?>
+          </select>         
+        </div>      
+  </div>
+  <div class="control-group">
+   <label class="control-label" id="testt" for="teachers"><?php echo $this->translate->_('Шалгагч багш');?></label>
+  <div class="controls">
+       <input type="text" id="teachers" name="teachers" placeholder="Багш нарын нэрс">
+  </div>
+  </div>
+    
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-success"><?php echo $this->translate->_('Нэмэх');?></button>
+    </div>
+  </div>
+  <?php echo $this->error; ?>
+  <input type="hidden" id="tid">
+  
+</form>
+<hr noshade/>
+    <h4> <?php echo $this->translate->_('Шалгалтын хуваарь');?></h4>
+    <hr/>
+<table class="table table-striped">
+              <thead>
+                <tr>
+                  <th><?php echo $this->translate->_('Хичээлийн Нэр');?></th>
+                  <th><?php echo $this->translate->_('Анги');?></th>
+                  <th><?php echo $this->translate->_('Өдөр');?></th>
+                  <th><?php echo $this->translate->_('Цаг');?></th>
+                  <th><?php echo $this->translate->_('Өрөө');?></th>
+                  <th><?php echo $this->translate->_('Шалгагч багш');?></th>
+                  <th><?php echo $this->translate->_('Устгах');?></th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php foreach ($this->examc as $exams) {?>              
+                <tr id="<?php echo $exams->id; ?>" class="edit_tr">                  
+                  <td>
+                      <span id="one_<?php echo $exams->id;?>" class="text">
+                        <?php echo $exams->lesson; ?>
+                      </span>                      
+                  </td>
+                  <td class="edit <?php echo $exams->id;?>">
+                      <span id="two_<?php echo $exams->id;?>" class="text">
+                        <?php echo $exams->eclass; ?>
+                      </span>                      
+                  </td>
+                  <td class="edit <?php echo $exams->id;?>">
+                      <span id="th_<?php echo $exams->id;?>" class="text">
+                      <?php
+                        $date = date('D, d M Y', strtotime ($exams->edate));
+                        echo  $date;
+                      ?>
+                      </span>                      
+                  </td>
+                  <td class="edit <?php echo $exams->id;?>">
+                   <span id="fo_<?php echo $exams->id;?>" class="text">   <?php
+                        $atoms2 = explode(":",$exams->etime);
+                        $hour = $atoms2[0];
+                        $min = $atoms2[1]; 
+                        $time = "$hour:$min"; 
+                        echo $time;
+                      ?>
+                   </span>                                            
+                  </td>
+                  <td class="edit <?php echo $exams->id;?>">
+                      <span id="fi_<?php echo $exams->id;?>" class="text">
+                        <?php echo $exams->rno; ?>
+                      </span>                      
+                  </td>
+                  <td class="edit <?php echo $exams->id;?>">
+                      <span id="si_<?php echo $exams->id;?>" class="text">
+                        <?php echo $exams->teachers; ?>
+                      </span>                      
+                  </td>
+                  <td >
+                    <a href="<?php echo $this->baseUrl(); ?>/admin/ann/del/id/<?php echo $exams->id; ?> "><i class="icon-remove"></i></a>
+                  </td>
+                </tr>
+              <?php }?>
+              </tbody>
+            </table>
+</div>
+<script type="text/javascript">
+    $('#toTeach').dblclick(function(){
+       $('#toTeach option:selected').each(function(index, value) {
+           var v = $(value).text();
+           var i = $('#toTeach option:selected').val();
+           if ($('#teachers').val().indexOf(v) == -1)
+                $('#teachers').val($('#teachers').val() + ' ' + v);       
+           });
+           
+    });
+    $('td.edit').click(function(){                                        
+        $('.ajax').html($('.ajax input').val());
+        $('.ajax').removeClass('ajax');
+        $(this).addClass('ajax');
+        $(this).html('<input id="editbox" style="width:80px;" size="'+$(this).text().length+'" type="text" value="' + $(this).text() + '">');
+        $('#editbox').focus();
+    });   
+    $('#testt').click(function(){                                        
+        $.ajax({type: "POST",
+                    url: baseurl+'/admin/ann/retr',
+                    data : {"format":"json"},                    
+                    success: function(data){
+                        alert(data.teachs[0].name);
+                    }});
+    });                   
+    $('td.edit').keydown(function(event){                                      
+        arr = $(this).attr('class').split( " " );
+        if(event.which == 13){ 
+            $.ajax({type: "POST",
+                    url: baseurl+'/admin/ann/edit',
+                    dataType:'json',
+                    data: "value="+$('.ajax input').val()+"&rownum="+arr[2]+"&field="+arr[1],
+                    success: function(data){
+                        $('.ajax').html($('.ajax input').val());
+                        $('.ajax').removeClass('ajax');
+                    }});
+         }
+     });
+     $('#editbox').live('blur',function(){
+        $('.ajax').html($('.ajax input').val());
+        $('.ajax').removeClass('ajax');
+     });
+     //$("#teachers").tokenInput(baseurl+"/admin/ann/retr");      
+</script>
+<script>
+    $('#forDate').datepicker({ dateFormat: 'yy-mm-dd' });
+    $('#forTime').timepicker();
+</script>

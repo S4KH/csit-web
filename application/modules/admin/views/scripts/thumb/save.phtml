@@ -1,0 +1,38 @@
+<form id="login" class="form-horizontal" method="post" action="<?php echo $this->baseUrl();?>/admin/ann/add">
+    <legend><?php echo $this->translate->_('Шалгалтын хуваарь нэмэх');?></legend>
+    <div class="control-group">
+    <label class="control-label" for="lessonname"><?php echo $this->translate->_('Хичээлийн Нэр');?></label>
+    <div class="controls">
+      <input type="text" name="lessonname" id="lessonname" placeholder="Хичээлийн нэр">
+    </div>
+  </div>
+  <div class="control-group">
+        <div class="controls">
+          <select  id="toTeach" name="teach" multiple>
+              <?php 
+                    foreach ($this->teachc as $value) {
+                        echo "<option value ='$value->tid'>";
+                        echo $value->tname;
+                        echo '</option>'; 
+                    }
+              ?>
+          </select>         
+        </div>      
+  </div>
+  <div class="control-group">
+   <label class="control-label" for="teachers"><?php echo $this->translate->_('Шалгагч багш');?></label>
+  <div class="controls">
+       <input type="text" id="teachers" name="teachers" onkeyup="showResult(this.value)" placeholder="Багш нарын нэрс">
+       <div id="livesearch"></div>
+  </div>
+  </div>
+    
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-success"><?php echo $this->translate->_('Нэмэх');?></button>
+    </div>
+  </div>
+  <?php echo $this->error; ?>
+  <input type="hidden" id="tid">
+  
+</form>

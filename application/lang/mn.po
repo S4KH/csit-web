@@ -1,0 +1,191 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sit\n"
+"POT-Creation-Date: 2013-01-09 21:54+0800\n"
+"PO-Revision-Date: 2013-01-09 21:55+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: Mongolian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\sit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: application\n"
+
+#: application/layouts/layout.phtml:39 application/layouts/layout.phtml:64
+msgid "Нүүр"
+msgstr "Нүүр"
+
+#: application/layouts/layout.phtml:42
+msgid "Бичлэг Нэмэх"
+msgstr ""
+
+#: application/layouts/layout.phtml:43
+msgid "Гишүүд"
+msgstr ""
+
+#: application/layouts/layout.phtml:44
+msgid "Зураг"
+msgstr ""
+
+#: application/layouts/layout.phtml:47
+msgid "Тохиргоо"
+msgstr ""
+
+#: application/layouts/layout.phtml:48
+msgid "Гарах"
+msgstr ""
+
+#: application/layouts/layout.phtml:66
+msgid "Тухай"
+msgstr ""
+
+#: application/layouts/layout.phtml:68
+msgid "Түүх"
+msgstr ""
+
+#: application/layouts/layout.phtml:69
+msgid "Бүтрэлдэхүүн"
+msgstr ""
+
+#: application/layouts/layout.phtml:70
+msgid "Гадаад харилцаа"
+msgstr ""
+
+#: application/layouts/layout.phtml:74
+msgid "Сургалт"
+msgstr ""
+
+#: application/layouts/layout.phtml:76
+msgid "Бакалавр"
+msgstr ""
+
+#: application/layouts/layout.phtml:79
+msgid "Магистр"
+msgstr ""
+
+#: application/layouts/layout.phtml:81
+msgid "Доктор"
+msgstr "Доктор"
+
+#: application/layouts/layout.phtml:87
+msgid "Тэнхимүүд"
+msgstr ""
+
+#: application/layouts/layout.phtml:89
+msgid "Электроникийн Тэнхим"
+msgstr ""
+
+#: application/layouts/layout.phtml:90
+msgid "Компьютер Мэдээллийн Технологийн Тэнхим"
+msgstr ""
+
+#: application/layouts/layout.phtml:91
+msgid "Холбооны Технологийн Тэнхим"
+msgstr ""
+
+#: application/layouts/layout.phtml:95
+#: application/modules/default/views/scripts/newsl/listn.phtml:27
+msgid "Мэдээ"
+msgstr ""
+
+#: application/layouts/layout.phtml:97
+#: application/modules/default/views/scripts/newsl/listn.phtml:21
+msgid "Үйл явдал"
+msgstr "Үйл явдал"
+
+#: application/layouts/layout.phtml:98
+#: application/modules/default/views/scripts/newsl/listn.phtml:24
+msgid "Зарлал"
+msgstr ""
+
+#: application/layouts/layout.phtml:99
+msgid "Нийтлэл"
+msgstr ""
+
+#: application/layouts/layout.phtml:103
+msgid "Судалгаа"
+msgstr ""
+
+#: application/layouts/layout.phtml:105
+msgid "Төсөл"
+msgstr ""
+
+#: application/layouts/layout.phtml:106
+msgid "Чиглэл"
+msgstr ""
+
+#: application/layouts/layout.phtml:107
+msgid "Семинар"
+msgstr ""
+
+#: application/layouts/layout.phtml:108
+msgid "Хурал"
+msgstr ""
+
+#: application/layouts/layout.phtml:124 application/layouts/layout.phtml:132
+#: application/modules/default/views/scripts/authentication/login.phtml:10
+msgid "Нэвтрэх"
+msgstr ""
+
+#: application/layouts/layout.phtml:128
+#: application/modules/default/views/scripts/authentication/login.phtml:6
+msgid "Нэвтрэх нэр"
+msgstr ""
+
+#: application/layouts/layout.phtml:129
+#: application/modules/default/views/scripts/authentication/login.phtml:7
+msgid "Нууц үг"
+msgstr ""
+
+#: application/layouts/layout.phtml:131
+#: application/modules/default/views/scripts/authentication/login.phtml:9
+msgid "Намайг сана"
+msgstr ""
+
+#: application/layouts/layout.phtml:154
+msgid "ЗАРЛАЛ"
+msgstr ""
+
+#: application/layouts/layout.phtml:170
+msgid "Холбоо барих"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:8
+msgid "Шалгалтын хуваарь"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:10
+msgid "Хичээлийн Нэр"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:16
+msgid "Анги"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:22
+msgid "Он сар өдөр"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:28
+msgid "Өрөө"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:34
+msgid "Шалгалтын хэлбэр"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:40
+msgid "Шалгагч багш"
+msgstr ""
+
+#: application/modules/admin/views/scripts/ann/add.phtml:47
+msgid "Нэмэх"
+msgstr ""
+
+#: application/modules/default/views/scripts/index/index.phtml:29
+msgid "Second"
+msgstr ""

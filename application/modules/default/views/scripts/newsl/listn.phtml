@@ -1,0 +1,95 @@
+<div class="body">
+    <?php
+        switch ($this->type) {
+            case '1':
+                echo '<legend class="text-info">'.$this->translate->_("Үйл явдал").'</legend>';
+                break;
+            case '2':
+                echo '<legend class="text-info">'.$this->translate->_("Зарлал").'</legend>';
+                break;
+            case '3':
+                echo '<legend class="text-info">'.$this->translate->_("Мэдээ").'</legend>';
+                break;
+            default:
+                
+                break;
+        }
+    ?>      
+	          <?php
+	          	foreach($this->paginator as $value){
+	          ?>
+    				
+    				<div class="media">
+    				    <?php
+    				        if(isset($value['img_url'])){ 
+    				        if ($value['img_url']!=NULL){?>
+                            <a class="pull-left" href="#">
+                              <img class="media-object img-polaroid" src="<?php echo $this->baseUrl();?>/images/thumbnails/<?php echo $value['img_url'];?>" style="width:177px;; height:91px;">
+                            </a>
+                        <?php }} ?>
+                        <div class="media-body">
+                            <?php if($this->type==3){ ?>
+                                <span>
+                                    <?php 
+                                    echo date('D, d M Y h:i', strtotime ($value['etime']));
+                                    ?>
+                                </span> 
+                                <a href="<?php echo$this->baseUrl();?>/newsl/shown/nid/<?php echo $value['id'];?>/type/<?php echo $this->type;?>" style="color:#777777;">
+                                    <h4 class="media-heading" ><?php echo $value['title']; ?></h4>
+                                </a>                         
+                                <p><?php echo $value['content'],"...";?></p>
+                            <?php }?>
+                            <?php if($this->type==1){ ?>                                 
+                                <a data-toggle="modal" id="<?php echo $value['id']?>" class="linkto" href="" style="color:#777777;">
+                                    <h4 class="media-heading" ><?php echo $value['title']; ?></h4>
+                                </a>        
+                                <span>
+                                    <?php 
+                                        echo date('D, d M Y h:i', strtotime ($value['etime']));
+                                    ?>
+                                </span>                 
+                                <p><?php echo $value['place'];?></p>
+                                <div id="example_<?php echo $value['id']?>" class="modal fade in" style="display: none; ">
+                                    <div class="modal-header">  
+                                        <a class="close" data-dismiss="modal">×</a>  
+                                        <h3><?php echo $value['title'];?></h3>  
+                                    </div>  
+                                    <div class="modal-body">                                       
+                                        <?php if(isset($value['img_url'])){ 
+                                              if ($value['img_url']!=NULL){?>
+                                                <a class="pull-right" href="#">
+                                                    <img class="media-object img-polaroid" src="<?php echo $this->baseUrl();?>/images/thumbnails/<?php echo $value['img_url'];?>" style="width:177px;; height:91px;">
+                                                </a>
+                                               <?php }} ?> 
+                                        <p><?php echo $value['content'];?></p>
+                                        <div class="fb-like" data-href="<?php echo $this->baseUrl();?>/newsl/listn/type/1" data-send="false" data-width="450" data-show-faces="true"></div>
+                                        <p><b>When: </b><?php echo date('D, d M Y h:i', strtotime ($value['etime']));?></p>
+                                        <p><b>Where: </b><?php echo $value['place'];?></p>
+                                        <p><b>Audience: </b><?php echo $value['audience'];?></p>
+                                        <p><b>Contact: </b><?php echo $value['contact'];?></p>
+                                        <p><b>Tag: </b><?php echo $value['tag'];?></p>                
+                                    </div> 
+                                </div>
+                            <?php }?>
+                        </div>
+                        <hr/>
+                    </div>
+		  		<?php } ?>
+	           <?= $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>    
+</div>	
+	  		
+<script> 
+    $('.linkto').click(function(){ 
+        var ID=$(this).attr('id');   
+        { $("#example_"+ID).modal();    
+    }});
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=402934313121207";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>		  		
+		  		
+			

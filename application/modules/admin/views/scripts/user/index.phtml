@@ -1,0 +1,36 @@
+<div class="body">    
+    <table style="font-size:12px;" class="table">  
+        <thead>  
+          <tr>  
+            <th>#</th>
+            <th>Username</th>
+            <th>Mail</th>  
+            <th>Role</th>            
+            <th>Change Role</th> 
+          </tr>  
+        </thead>  
+        <tbody> 
+        <?php $i=1; foreach ($this->users as $value ) { ?>
+          <tr>                        
+                <td><?php echo $i; ?></td>           
+                <td><?php echo $value['username']; ?></td>
+                <td><?php echo $value['mail']; ?></td> 
+                <td>
+                    <?php 
+                      echo $value['role'];  
+                    ?>
+                </td>
+                <td>
+                    <select id='role'>
+                        <option> Change Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                </td>                             
+          </tr> 
+          <?php $i++;}?>   
+        </tbody>  
+    </table>  
+    <?= $this->paginationControl($this->users, 'Sliding', 'pagination.phtml'); ?>
+</div>

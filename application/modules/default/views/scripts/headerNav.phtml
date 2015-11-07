@@ -1,0 +1,164 @@
+        <?php $identity = Zend_Auth::getInstance()->getStorage()->read();
+            if($identity && $identity->role=='admin'){
+        ?>
+        <div class="well" style="width:150px; padding: 8px 0; position: fixed; top: 10px; right: 0;">
+            <ul class="nav nav-list" id="navlist"> 
+              <li class="nav-header"><?php echo $identity->username; ?></li>        
+              <li class="active"><a href="<?php echo $this->baseUrl();?>/index">
+                <i class="icon-home"></i> <?php echo $this->translate->_('Нүүр');?></a>
+              </li>
+              <li>
+                <a href="<?php echo $this->baseUrl();?>/admin/news">
+                    <i class="icon-edit"></i> <?php echo $this->translate->_('Мэдээ');?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $this->baseUrl();?>/admin/events">
+                    <i class="icon-edit"></i> <?php echo $this->translate->_('Үйл явдал');?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $this->baseUrl();?>/admin/ann/add">
+                    <i class="icon-edit"></i> <?php echo $this->translate->_('Шалгалт');?>
+                </a>
+              </li>
+              <li><a href="<?php echo $this->baseUrl();?>/admin/user/"><i class="icon-user"></i> <?php echo $this->translate->_('Гишүүд');?></a></li>
+              <!--<li><a href="#"><i class="icon-picture"></i> <?php echo $this->translate->_('Зураг');?></a></li>-->              
+              
+              
+              <li class="divider"></li>
+              <!--<li><a href="<?php echo $this->baseUrl();?>/user/sett"><i class="icon-wrench"></i><?php echo $this->translate->_('Тохиргоо');?></a></li>-->
+              <li><a href="<?php echo $this->baseUrl();?>/authentication/logout"><i class="icon-share"></i> <?php echo $this->translate->_('Гарах');?></a></li>
+            </ul>
+        </div>
+        <?php }?>
+        <?php 
+            if($identity && $identity->role=='teacher'){
+        ?>
+        <div class="well" style="width:150px; padding: 8px 0; position: fixed; top: 10px; right: 0;">
+            <ul class="nav nav-list" id="navlist"> 
+              <li class="nav-header"><?php echo $identity->username; ?></li>        
+              <li class="active"><a href="<?php echo $this->baseUrl();?>/index">
+                <i class="icon-home"></i> <?php echo $this->translate->_('Нүүр');?></a>
+              </li>
+              <li>
+                <a href="<?php echo $this->baseUrl();?>/user/index/uid/<?php echo $identity->uid;?>">
+                    <i class="icon-edit"></i> <?php echo $this->translate->_('Мэдээ');?>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo $this->baseUrl();?>/admin/ann/add">
+                    <i class="icon-edit"></i> <?php echo $this->translate->_('Шалгалт');?>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li><a href="<?php echo $this->baseUrl();?>/user/sett"><i class="icon-wrench"></i><?php echo $this->translate->_('Тохиргоо');?></a></li>
+              <li><a href="<?php echo $this->baseUrl();?>/authentication/logout"><i class="icon-share"></i> <?php echo $this->translate->_('Гарах');?></a></li>
+            </ul>
+        </div>
+        <?php }?>
+        <?php 
+            if($identity && $identity->role=='student'){
+        ?>
+        <div class="well" style="width:150px; padding: 8px 0; position: fixed; top: 10px; right: 0;">
+            <ul class="nav nav-list" id="navlist"> 
+              <li class="nav-header"><?php echo $identity->username; ?></li>        
+              <li class="active"><a href="<?php echo $this->baseUrl();?>/index">
+                <i class="icon-home"></i> <?php echo $this->translate->_('Нүүр');?></a>
+              </li>
+              <li>
+                <a href="<?php echo $this->baseUrl();?>/user/index/uid/<?php echo $identity->uid;?>">
+                    <i class="icon-edit"></i> <?php echo $this->translate->_('Мэдээ');?>
+                </a>
+              </li>      
+              <li class="divider"></li>
+              <li><a href="<?php echo $this->baseUrl();?>/user/sett"><i class="icon-wrench"></i><?php echo $this->translate->_('Тохиргоо');?></a></li>
+              <li><a href="<?php echo $this->baseUrl();?>/authentication/logout"><i class="icon-share"></i> <?php echo $this->translate->_('Гарах');?></a></li>
+            </ul>
+        </div>
+        <?php }?>
+        <div class="container">
+            <img src="/sit/public/images/sit_logo_en.jpg" style="margin-bottom: 10px; float:left;" alt="logo" /> 
+            <div class="btn-group pull-right" style="padding-top: 2px;">
+                        <a class="btn btn-small <?php if($this->language=='en') echo "btn-primary active";?>" onclick="chlang('en');">Eng</a>
+                        <a class="btn btn-small <?php if($this->language=='mn') echo "btn-primary";?>" onclick="chlang('mn');">Мон</a>
+            </div>
+        </div>   
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container" style="width: 960px;">
+                    <div class="nav-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav pull-left">
+                            <li ><a href="<?php echo $this->baseUrl();?>/index/index"><i class="icon-home"></i> <?php echo $this->translate->_('Нүүр');?></a></li>
+                            <li class="dropdown">
+                                <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th-large"></i> <?php echo $this->translate->_('Тухай');?> <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/19">- <?php echo $this->translate->_('Түүх');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/18">- <?php echo $this->translate->_('Бүтрэлдэхүүн');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/21">- <?php echo $this->translate->_('Гадаад харилцаа');?></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-book"></i> <?php echo $this->translate->_('Сургалт');?> <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/22">- <?php echo $this->translate->_('Бакалавр');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/23">-
+                                        <?php 
+                                            echo $this->translate->_('Магистр');
+                                            echo ", "; 
+                                            echo $this->translate->_('Доктор');?>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-align-justify"></i> <?php echo $this->translate->_('Мэдээ');?> <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/newsl/listn/type/1">- <?php echo $this->translate->_('Үйл явдал');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/newsl/shown/nid/-2/type/2">- <?php echo $this->translate->_('Зарлал');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/newsl/listn/type/3">- <?php echo $this->translate->_('Нийтлэл');?></a></li>
+                                </ul>                  
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe"></i> <?php echo $this->translate->_('Судалгаа');?> <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/20">- <?php echo $this->translate->_('Төсөл');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/24">- <?php echo $this->translate->_('Чиглэл');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/25">- <?php echo $this->translate->_('Семинар');?></a></li>
+                                    <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/26">- <?php echo $this->translate->_('Хурал');?></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th"></i> <?php echo $this->translate->_('Оюутан');?> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                        <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/27">- <?php echo $this->translate->_('Тэтгэлэг');?></a></li>
+                                        <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/28">- <?php echo $this->translate->_('Дотуур байр');?></a></li>
+                                        <li><a tabindex="-1" href="<?php echo $this->baseUrl();?>/page/view/pid/29">- <?php echo $this->translate->_('Оюутны бие даах төв');?></a></li>
+                                    </ul>                  
+                            </li>
+                                                                                                                        
+                        </ul>
+                        <ul class="nav pull-right">                         
+                            <li class="divider-vertical"></li>                          
+                                <?php
+                                    if(!$identity) {
+                                ?>                                                  
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown"><?php echo $this->translate->_('Нэвтрэх');?>
+                                    <strong class="caret"></strong></a>
+                                    <div class="dropdown-menu" style="padding: 10px; padding-bottom: 0px;">  
+                                        <form action="<?php echo $this->baseUrl();?>/authentication/login" method="post" accept-charset="UTF-8">
+                                            <input id="uname" validate="customValidatorGroupName" require="Please enter your username." style="margin-bottom: 15px; height: 30px;" type="text" name="username" placeholder="<?php echo $this->translate->_('Нэвтрэх нэр');?>" size="30" />
+                                            <input id="pass" validate="customValidatorGroupName" require="Please enter your password." style="margin-bottom: 15px; height: 30px;" type="password" name="password" placeholder="<?php echo $this->translate->_('Нууц үг');?>" size="30" />
+                                            <input id="rme" style="float: left; margin-right: 10px;" type="checkbox" name="rme" value="1" />
+                                            <label class="string optional" for="user_remember_me"> <?php echo $this->translate->_('Намайг сана');?></label>
+                                            <input id="login" class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="<?php echo $this->translate->_('Нэвтрэх');?>" />
+                                        </form>
+                                    </div>
+                                </li>
+                                <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>

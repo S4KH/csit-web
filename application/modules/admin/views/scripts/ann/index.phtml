@@ -1,0 +1,54 @@
+<style>
+    table{
+        font-size:13px; 
+    }
+</style>
+<div class="body">
+    <h4> <?php echo $this->translate->_('Шалгалтын хуваарь');?></h4>
+    <hr/>
+<table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th><th><?php echo $this->translate->_('Хичээлийн Нэр');?></th>
+                  <th><?php echo $this->translate->_('Анги');?></th>
+                  <th><?php echo $this->translate->_('Өдөр');?></th>
+                  <th><?php echo $this->translate->_('Цаг');?></th>
+                  <th><?php echo $this->translate->_('Өрөө');?></th>
+                  <th><?php echo $this->translate->_('Шалгагч багш');?></th>
+                  <th><?php echo $this->translate->_('Устгах');?></th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php foreach ($this->examc as $exams) {?>              
+                <tr >
+                  <td><?php echo $exams->id; ?></td>
+                  <td><?php echo $exams->lesson; ?></td>
+                  <td><?php echo $exams->eclass; ?></td>
+                  <td>
+                      <?php
+                        $atoms = explode("-",$exams->edate); 
+                        $month = $atoms[1];
+                        $day = $atoms[2];
+                        echo $month , " сарын " , $day; 
+                      ?>
+                  </td>
+                  <td>
+                      <?php
+                        $atoms2 = explode(":",$exams->etime);
+                        $hour = $atoms2[0];
+                        $min = $atoms2[1]; 
+                        echo $hour,":",$min; 
+                      ?>                      
+                  </td>
+                  <td><?php echo $exams->rno; ?></td>
+                  <td>
+                    <?php echo $exams->teachers; ?>
+                  </td>
+                  <td>
+                    <a><i class="icon-remove"></i></a>
+                  </td>
+                </tr>
+              <?php }?>
+              </tbody>
+            </table>
+</div>            

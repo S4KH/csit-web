@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<?php echo $this->headMeta();?>
+		<?php echo $this->headTitle();?>
+		<?php echo $this->doctype();?>
+		<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
+		<link href="<?php echo $this->baseUrl();?>/css/bootstrap.css" rel="stylesheet">
+		<link href="<?php echo $this->baseUrl();?>/css/time.css" rel="stylesheet">
+		<link href="<?php echo $this->baseUrl();?>/js/jquery.mCustomScrollbar.css" rel="stylesheet">
+		<link href="<?php echo $this->baseUrl();?>/css/token-input-facebook.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/jquery-ui.css" />		
+		<link href="<?php echo $this->baseUrl();?>/css/toggle-switch.css" rel="stylesheet">		
+        <script>
+           var baseurl='<?php echo $this->baseUrl();?>';
+        </script>        
+        <script src="<?php echo $this->baseUrl();?>/js/jquery-1.7.1.min.js"></script>  
+        <script src="<?php echo $this->baseUrl();?>/js/jquery.mCustomScrollbar.js"></script>
+        <script src="<?php echo $this->baseUrl();?>/js/jquery.mousewheel.min.js"></script>         
+        <script src="<?php echo $this->baseUrl();?>/js/bootstrap.min.js"></script>      
+        <script src="<?php echo $this->baseUrl();?>/js/jquery-ui.min.js"></script>    
+        <script src="<?php echo $this->baseUrl();?>/js/jquery-ui-timepicker-addon.js"></script>
+        <script src="<?php echo $this->baseUrl();?>/js/jquery.tokeninput.js"></script>        
+        <script src="<?php echo $this->baseUrl();?>/js/nicEdit.js"></script>
+        <style>            
+            .body{
+                border-radius: 5px;
+                border: solid 1px #DDD;
+                background-color: #FDFDFD;
+                padding: 5px 10px 5px 10px;
+            }
+        </style>
+	</head>
+	<body>		
+		
+		 
+		<?php 
+            echo $this->partial('headerNav.phtml','default',array('translate' => $this->translate,'language' =>$this->language));
+        ?>
+		<div class="container">										
+		     <div class="row-fluid">
+				  <div class="span9">
+				       <?php echo $this->layout()->content;?>				  					 				
+				  </div>
+				  <div class="span3" style="padding: 0px;">
+			           <div class="body">									
+    						<div style="height: 500px;" id="events">										
+    							<h6 class="text-info" style="margin: 0px;"><?php echo $this->translate->_('АРГА ХЭМЖЭЭ');?> <i style="float: right;" class="icon-flag"></i></h6>
+    							<hr noshade class="sbar"/>										
+                                <div class="content">
+                                     <div id="content_1">
+                                          
+                                     </div>
+                                 </div>                                        
+    						</div>
+    					    <div style="margin-top: 20px;" id="address">
+    					         <h6 class="text-info" style="margin: 0px;"><?php echo $this->translate->_('ХОЛБОО БАРИХ');?> <i style="float: right;" class="icon-info-sign"></i></h6>
+                                 <hr noshade class="sbar"/>
+    					         <address>
+                                    <strong>NUM - SIT.</strong><br>
+                                    Монгол улс, Улаанбаатар хот,
+                                    Сүхбаатар дүүрэг, Их сургуулийн гудамж-3, <br>
+                                    <a href="http://sit.num.edu.mn/images/stories/flashmap.swf">МУИС-ийн хичээлийн III байр</a><br>
+                                    <abbr title="Phone">P:</abbr> 324-007 <br>
+                                    <abbr title="Fax">F:</abbr> 976-11-325305 
+                                </address>
+    					   </div>
+						</div>	
+					</div>										
+				</div>
+		  </div>
+		  <div class="container" style="padding:10px;">
+		      <hr/>
+		      <footer style="font-size:12px; color: #565347;">
+		          <center>
+		           <a style="color: #565347;" href="<?php echo $this->baseUrl();?>/index/index"><?php echo $this->translate->_('Нүүр');?></a>
+                   | <a style="color: #565347;" href="<?php echo $this->baseUrl();?>/newsl/listn/type/3"><?php echo $this->translate->_('Мэдээ');?></a>
+                   | <a style="color: #565347;" href="<?php echo $this->baseUrl();?>/page/view/pid/19"><?php echo $this->translate->_('Бидний тухай');?></a>
+                   | <a style="color: #565347;" href="<?php echo $this->baseUrl();?>/newsl/listn/type/3"><?php echo $this->translate->_('Холбоо барих');?></a>
+                  <br>
+		              Зохиогчийн эрх © 2013 Мэдээллийн технологийн сургууль
+		          </center>
+		      </footer>
+		  </div>
+	<script> 
+	    bkLib.onDomLoaded(nicEditors.allTextAreas);
+        (function($){
+            $(window).load(function(){
+                var months = [
+                    'Jan', 'Feb', 'Mar', 'Apr',
+                    'May', 'Jun', 'Jul', 'Aug',
+                    'Sept', 'Oct', 'Nov', 'Dec'
+                ];
+                $.post(baseurl+'/default/newsl/ajax', 
+                        {"format":"json"}, 
+                        function(data, textStatus) {
+                            response = JSON.parse(data);
+                            NewsHtml="";
+                            for(var i in response.list){
+                                x=response.list[i];
+                                var d = new Date(x.date);
+                                xHtml='<p style="font-size:12px; margin-bottom:0px;">'
+                                        +'<a class="text-info" href="#">'
+                                        +x.title+'</a></p>'+'<div style="font-size:12px; font-weight:bold;">'
+                                        +months[d.getMonth()] + ' '
+                                         + d.getDate()+' '+ d.getHours()+':'+d.getMinutes()+'</div><hr/>';
+                                NewsHtml+=xHtml;
+                            }
+                            $("#content_1").html(NewsHtml);
+                            $("#content_1").mCustomScrollbar({
+                                scrollButtons:{
+                                    enable:true
+                                }
+                            });
+                        }, 
+                'html');
+                $("#content_1").mCustomScrollbar({
+                    scrollButtons:{
+                        enable:true
+                    }
+                });
+                
+            });
+        })(jQuery);       
+        function chlang(lang){
+            parent.location=baseurl+'/languageswitch/switch/lang/'+lang;
+        }
+        $('.dropdown-menu li a').on('click', function() {
+            $(this).parent().parent().parent().parent().find('.active').removeClass('active');
+            $(this).parent().parent().parent().addClass('active');
+        });
+        
+    </script>
+    <script>
+    (function() {
+        var cx = '013431085292509490834:yuc3f0kewfc';
+        var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+    })();
+    </script>
+    
+<script>
+    $('#forDate').datetimepicker({ dateFormat: 'yy-mm-dd' });
+</script>
+	</body>
+</html>	

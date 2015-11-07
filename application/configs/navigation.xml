@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<nav>
+		<logout>
+			<label>Logout</label>
+			<module>default</module>
+			<controller>authentication</controller>
+			<action>logout</action>
+			<resource>default:authentication</resource>
+		</logout>
+		
+		<login>
+			<label>Login</label>
+			<module>default</module>
+			<controller>authentication</controller>
+			<action>login</action>
+			<resource>default:authentication</resource>
+		</login>
+		
+		<listn>
+			<label>List News</label>
+			<module>default</module>
+			<controller>newsl</controller>
+			<action>listn</action>
+			<resource>default:newsl</resource>
+		</listn>
+		
+		
+		<shown>
+			<label>Show News</label>
+			<module>default</module>
+			<controller>newsl</controller>
+			<action>shown</action>
+			<resource>default:newsl</resource>
+		</shown>
+		
+		<news>
+			<label>News</label>
+			<controller>news</controller>
+			<action>index</action>
+			<module>admin</module>
+			<resource>admin:news</resource>
+			<privilege>index</privilege>
+			<pages>				
+				<add>
+					<label>Add</label>
+					<module>admin</module>
+					<tabindex>-1</tabindex>
+					<controller>news</controller>
+					<action>add</action>
+				</add>
+				<edit>
+					<label>Edit</label>
+					<tabindex>-1</tabindex>
+					<module>admin</module>
+					<controller>news</controller>
+					<action>edit</action>
+				</edit>
+				<del>
+					<label>Delete</label>
+					<module>admin</module>
+					<tabindex>-1</tabindex>
+					<controller>news</controller>
+					<action>del</action>
+				</del>
+			</pages>
+		</news>
+	</nav>
+</config>

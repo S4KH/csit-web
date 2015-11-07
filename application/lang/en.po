@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sit\n"
+"POT-Creation-Date: 2013-01-15 00:08+0800\n"
+"PO-Revision-Date: 2013-01-15 00:08+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: translate;gettext;gettext_noop\n"
+"X-Poedit-Basepath: c:\\xampp\\htdocs\\sit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: application\n"
+
+#: application/layouts/layout.phtml:47
+msgid "АРГА ХЭМЖЭЭ"
+msgstr "EVENTS"
+
+#: application/layouts/layout.phtml:56
+msgid "ХОЛБОО БАРИХ"
+msgstr "ADDRESS"
+
+#: application/layouts/layout.phtml:75
+#: application/modules/default/views/scripts/headerNav.phtml:8
+#: application/modules/default/views/scripts/headerNav.phtml:42
+#: application/modules/default/views/scripts/headerNav.phtml:67
+#: application/modules/default/views/scripts/headerNav.phtml:92
+msgid "Нүүр"
+msgstr "Home"
+
+#: application/layouts/layout.phtml:76
+#: application/modules/default/views/scripts/headerNav.phtml:12
+#: application/modules/default/views/scripts/headerNav.phtml:46
+#: application/modules/default/views/scripts/headerNav.phtml:71
+#: application/modules/default/views/scripts/headerNav.phtml:115
+#: application/modules/default/views/scripts/newsl/listn.phtml:11
+msgid "Мэдээ"
+msgstr "News"
+
+#: application/layouts/layout.phtml:77
+msgid "Бидний тухай"
+msgstr "About Us"
+
+#: application/layouts/layout.phtml:78
+msgid "Холбоо барих"
+msgstr "Contact info"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:13
+#: application/modules/admin/views/scripts/thumb/save.phtml:2
+msgid "Шалгалтын хуваарь нэмэх"
+msgstr "Add exam schedule"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:15
+#: application/modules/admin/views/scripts/ann/add.phtml:17
+#: application/modules/admin/views/scripts/ann/add.phtml:80
+#: application/modules/admin/views/scripts/ann/index.phtml:12
+#: application/modules/admin/views/scripts/thumb/save.phtml:4
+#: application/modules/default/views/scripts/newsl/shown.phtml:40
+msgid "Хичээлийн Нэр"
+msgstr "Lessons"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:21
+#: application/modules/admin/views/scripts/ann/add.phtml:23
+#: application/modules/admin/views/scripts/ann/add.phtml:81
+#: application/modules/admin/views/scripts/ann/index.phtml:13
+#: application/modules/default/views/scripts/newsl/shown.phtml:41
+msgid "Анги"
+msgstr "Class"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:27
+#: application/modules/admin/views/scripts/ann/add.phtml:29
+msgid "Сар өдөр"
+msgstr "Month/Day"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:33
+#: application/modules/admin/views/scripts/ann/add.phtml:35
+#: application/modules/admin/views/scripts/ann/add.phtml:83
+#: application/modules/admin/views/scripts/ann/index.phtml:15
+#: application/modules/default/views/scripts/newsl/shown.phtml:43
+msgid "Цаг"
+msgstr "Time"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:39
+#: application/modules/admin/views/scripts/ann/add.phtml:41
+#: application/modules/admin/views/scripts/ann/add.phtml:84
+#: application/modules/admin/views/scripts/ann/index.phtml:16
+#: application/modules/default/views/scripts/newsl/shown.phtml:44
+msgid "Өрөө"
+msgstr "Room #"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:59
+#: application/modules/admin/views/scripts/ann/add.phtml:85
+#: application/modules/admin/views/scripts/ann/index.phtml:17
+#: application/modules/admin/views/scripts/thumb/save.phtml:23
+#: application/modules/default/views/scripts/newsl/shown.phtml:45
+msgid "Шалгагч багш"
+msgstr "Teachers"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:67
+#: application/modules/admin/views/scripts/thumb/save.phtml:32
+msgid "Нэмэх"
+msgstr "Add"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:75
+#: application/modules/admin/views/scripts/ann/index.phtml:7
+#: application/modules/default/views/scripts/newsl/shown.phtml:35
+msgid "Шалгалтын хуваарь"
+msgstr "Exam schedule"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:82
+#: application/modules/admin/views/scripts/ann/index.phtml:14
+#: application/modules/default/views/scripts/newsl/shown.phtml:42
+msgid "Өдөр"
+msgstr "Date"
+
+#: application/modules/admin/views/scripts/ann/add.phtml:86
+#: application/modules/admin/views/scripts/ann/index.phtml:18
+msgid "Устгах"
+msgstr "Delete"
+
+#: application/modules/default/views/scripts/headerNav.phtml:17
+#: application/modules/default/views/scripts/headerNav.phtml:117
+#: application/modules/default/views/scripts/newsl/listn.phtml:5
+msgid "Үйл явдал"
+msgstr "Event"
+
+#: application/modules/default/views/scripts/headerNav.phtml:22
+#: application/modules/default/views/scripts/headerNav.phtml:51
+msgid "Шалгалт"
+msgstr "Exam"
+
+#: application/modules/default/views/scripts/headerNav.phtml:25
+msgid "Гишүүд"
+msgstr "Users"
+
+#: application/modules/default/views/scripts/headerNav.phtml:26
+msgid "Зураг"
+msgstr "Gallery"
+
+#: application/modules/default/views/scripts/headerNav.phtml:30
+#: application/modules/default/views/scripts/headerNav.phtml:55
+#: application/modules/default/views/scripts/headerNav.phtml:75
+msgid "Тохиргоо"
+msgstr "Settings"
+
+#: application/modules/default/views/scripts/headerNav.phtml:31
+#: application/modules/default/views/scripts/headerNav.phtml:56
+#: application/modules/default/views/scripts/headerNav.phtml:76
+msgid "Гарах"
+msgstr "Logout"
+
+#: application/modules/default/views/scripts/headerNav.phtml:94
+msgid "Тухай"
+msgstr "About"
+
+#: application/modules/default/views/scripts/headerNav.phtml:96
+msgid "Түүх"
+msgstr "History"
+
+#: application/modules/default/views/scripts/headerNav.phtml:97
+msgid "Бүтрэлдэхүүн"
+msgstr "Structure"
+
+#: application/modules/default/views/scripts/headerNav.phtml:98
+msgid "Гадаад харилцаа"
+msgstr "Foreign relation"
+
+#: application/modules/default/views/scripts/headerNav.phtml:102
+msgid "Сургалт"
+msgstr "Admission"
+
+#: application/modules/default/views/scripts/headerNav.phtml:104
+msgid "Бакалавр"
+msgstr "Bachelor"
+
+#: application/modules/default/views/scripts/headerNav.phtml:107
+msgid "Магистр"
+msgstr "Master"
+
+#: application/modules/default/views/scripts/headerNav.phtml:109
+msgid "Доктор"
+msgstr "Doctor"
+
+#: application/modules/default/views/scripts/headerNav.phtml:118
+#: application/modules/default/views/scripts/newsl/listn.phtml:8
+msgid "Зарлал"
+msgstr "Announcement"
+
+#: application/modules/default/views/scripts/headerNav.phtml:119
+msgid "Нийтлэл"
+msgstr "Article"
+
+#: application/modules/default/views/scripts/headerNav.phtml:123
+msgid "Судалгаа"
+msgstr "Research"
+
+#: application/modules/default/views/scripts/headerNav.phtml:125
+msgid "Төсөл"
+msgstr "Project"
+
+#: application/modules/default/views/scripts/headerNav.phtml:126
+msgid "Чиглэл"
+msgstr "Mainstream"
+
+#: application/modules/default/views/scripts/headerNav.phtml:127
+msgid "Семинар"
+msgstr "Seminar"
+
+#: application/modules/default/views/scripts/headerNav.phtml:128
+msgid "Хурал"
+msgstr "Confrence"
+
+#: application/modules/default/views/scripts/headerNav.phtml:132
+msgid "Оюутан"
+msgstr "Student"
+
+#: application/modules/default/views/scripts/headerNav.phtml:134
+msgid "Тэтгэлэг"
+msgstr "Scholarship"
+
+#: application/modules/default/views/scripts/headerNav.phtml:135
+msgid "Дотуур байр"
+msgstr "Campus"
+
+#: application/modules/default/views/scripts/headerNav.phtml:136
+msgid "Оюутны бие даах төв"
+msgstr "Center for Independence"
+
+#: application/modules/default/views/scripts/headerNav.phtml:147
+#: application/modules/default/views/scripts/headerNav.phtml:155
+#: application/modules/default/views/scripts/authentication/login.phtml:10
+msgid "Нэвтрэх"
+msgstr "Login"
+
+#: application/modules/default/views/scripts/headerNav.phtml:151
+#: application/modules/default/views/scripts/authentication/login.phtml:6
+msgid "Нэвтрэх нэр"
+msgstr "Username"
+
+#: application/modules/default/views/scripts/headerNav.phtml:152
+#: application/modules/default/views/scripts/authentication/login.phtml:7
+msgid "Нууц үг"
+msgstr "Password"
+
+#: application/modules/default/views/scripts/headerNav.phtml:154
+#: application/modules/default/views/scripts/authentication/login.phtml:9
+msgid "Намайг сана"
+msgstr "Remember Me"
+
+#~ msgid "ЗАРЛАЛ"
+#~ msgstr "ANNOUNCEMENTS"
+
+#~ msgid "Бичлэг Нэмэх"
+#~ msgstr "Add Post"
+
+#~ msgid "Тэнхимүүд"
+#~ msgstr "Departments"
+
+#~ msgid "Электроникийн Тэнхим"
+#~ msgstr "Electronics"
+
+#~ msgid "Компьютер Мэдээллийн Технологийн Тэнхим"
+#~ msgstr "Information Technology"
+
+#~ msgid "Холбооны Технологийн Тэнхим"
+#~ msgstr "Communications"
+
+#~ msgid "Second"
+#~ msgstr "2 дахь"
+
+#~ msgid "Шалгалтын хэлбэр"
+#~ msgstr "Exam Type"
+
+#~ msgid "Цааш Унших"
+#~ msgstr "Full Story"
+
+#~ msgid "ҮЙЛ ЯВДАЛ"
+#~ msgstr "EVENTS"
+
+#, fuzzy
+#~ msgid "Үйл Явдал"
+#~ msgstr "Event"
+
+#~ msgid "МУИС-МТС"
+#~ msgstr "NUM-SIT"
+
+#~ msgid "Докторын түвшин"
+#~ msgstr "Doctor's degree"
+
+#~ msgid "Багш нарын нийтлэл"
+#~ msgstr "Teacher's article"
+
+#~ msgid "Монгол Улсын Их Сургууль"
+#~ msgstr "National University of Mongolia"
+
+#~ msgid "Мэдээллийн Технологийн Сургууль"
+#~ msgstr "School of Information Technology"
+
+#~ msgid "Танилцуулга"
+#~ msgstr "Introduction"
+
+#~ msgid "Амжилт"
+#~ msgstr "Success"

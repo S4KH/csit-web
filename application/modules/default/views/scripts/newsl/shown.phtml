@@ -1,0 +1,86 @@
+<style>
+    table{
+        font-size:13px; 
+    }
+</style>
+<div class="body">
+
+<?php if($this->type=='3') {?> 
+    <h4><?php echo $this->value->title;?></h4>
+    <div style="margin-top:5px;">
+        <span class="label">Posted on <?php echo date('D, d M Y h:i', strtotime ($this->value->etime));?></span>
+        <i class="icon-user"></i> by <b><?php echo $this->userInfo->username; ?></b>
+        <?php
+        if($this->identity){         
+            if($this->identity->role == 'admin'){?>
+                    <div style="float:right; margin: 0px;" class="btn-toolbar">
+                        <div class="btn-group">
+                             <a href="<?php echo $this->baseUrl();?>/admin/news/edit/nid/<?php echo $this->value->id;?>" class="btn disabled "><i class="icon-wrench"></i></a>
+                             <a href="<?php echo $this->baseUrl();?>/admin/news/del/nid/<?php echo $this->value->id;?>" class="btn disabled "><i class="icon-trash"></i></a>
+                        </div>
+                    </div>
+        <?php }}?>       
+    </div>    
+    <?php if ($this->value->img_url!=NULL){?>
+            <div style="margin: 10px; float: left;">
+                    <img src="<?php echo $this->baseUrl();?>/images/thumbnails/<?php echo $this->value->img_url;?>" alt="" >                
+            </div>
+    <?php }?>
+    <p style="margin-top: 5px;"><?php echo $this->value->content;?></p>  
+    <div class="pull-right">
+        <i class="icon-tasks"></i> Hits: <?php echo $this->value->readNo;?>
+    </div><br/>
+<?php } ?>
+
+<?php if($this->type=='2') {?> 
+    <h4> <?php echo $this->translate->_('Шалгалтын хуваарь');?></h4>
+    <hr/>
+<table class="table table-striped">
+              <thead>
+                <tr>
+                  <th><?php echo $this->translate->_('Хичээлийн Нэр');?></th>
+                  <th><?php echo $this->translate->_('Анги');?></th>
+                  <th><?php echo $this->translate->_('Өдөр');?></th>
+                  <th><?php echo $this->translate->_('Цаг');?></th>
+                  <th><?php echo $this->translate->_('Өрөө');?></th>
+                  <th><?php echo $this->translate->_('Шалгагч багш');?></th>                  
+                </tr>
+              </thead>
+              <tbody>
+              <?php foreach ($this->value as $exams) {?>              
+                <tr >                  
+                  <td><?php echo $exams->lesson; ?></td>
+                  <td><?php echo $exams->eclass; ?></td>
+                  <td>
+                      <?php
+                        echo date('D, d M Y', strtotime ($exams->edate)); 
+                      ?>
+                  </td>
+                  <td>
+                      <?php
+                        $atoms2 = explode(":",$exams->etime);
+                        $hour = $atoms2[0];
+                        $min = $atoms2[1]; 
+                        echo $hour,":",$min; 
+                      ?>                      
+                  </td>
+                  <td><?php echo $exams->rno; ?></td>
+                  <td>
+                    <?php echo $exams->teachers; ?>
+                  </td>
+                </tr>
+              <?php }?>
+              </tbody>
+            </table>
+        <?php }?>       
+<hr noshade/>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://localhost/sit/public/newsl/shown/nid/<?php echo $this->value->id;?>&type=3" data-width="700" data-num-posts="2"></div>

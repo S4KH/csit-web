@@ -1,0 +1,46 @@
+<div id="myCarousel" class="carousel slide">
+	<div class="carousel-inner">
+    	<?php
+           $first=1; 
+           foreach ($this->newst as $news){
+               if($news['img_url']!=NULL){
+                    if($first==1) echo '<div class="item active">';
+                    else echo '<div class="item">';
+                    $first=0;
+                    echo '<img src="'.$this->baseUrl()."/images/thumbnails/".$news['img_url'].'" alt="" style="width:100%; height:320px;">';
+                    echo '<div class="carousel-caption"><p><a href="'.$this->baseUrl().'/newsl/shown/type/3/nid/'.$news['id'].'" style="color:rgb(217,217,217);"> '.$news['title'].'  </a></p>';
+                    echo '</div></div>'; 
+               }
+           }
+        ?>
+	</div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>        
+             <?php
+                 $i=0;                 
+                 foreach ($this->news as $value ) {
+                 if($i==3 || $i==0)
+                    echo '<ul class="thumbnails">';
+                 ?>
+                <li class="span4" style="border: 0px;">
+        			<div>
+        			    <?php if($value['img_url']!=NULL)
+          				          $img = $value['img_url'];
+                              else {
+                                   $img = "sit-nothumb.png";
+                              }          				          
+          				?>
+          				<img style="width:210px; height:110px; border:1px dotted gray;" src="<?php echo $this->baseUrl();?>/images/thumbnails/<?php echo $img;?>" alt="">
+          				<a style="text-decoration: none;" href="<?php echo $this->baseUrl();?>/newsl/shown/nid/<?php echo $value['id'];?>/type/3">
+          				    <h5><?php echo $value['title']; ?></h5>
+          				</a>
+    				    <p><?php echo $value['content'],".."; ?></p>				    
+        			</div>
+      			</li>  
+      	     <?php if($i==5 || $i==2) 
+      	             echo '</ul>'; 
+      	           $i++;
+              } ?>
+      	 
+        

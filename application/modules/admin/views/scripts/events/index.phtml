@@ -1,0 +1,48 @@
+<?php
+function myTruncate($string, $limit, $break=" ", $pad="...")
+{
+  // return with no change if string is shorter than $limit
+  if(strlen($string) <= $limit) return $string;
+
+  // is $break present between $limit and the end of the string?
+  if(false !== ($breakpoint = strpos($string, $break, $limit))) {
+    if($breakpoint < strlen($string) - 1) {
+      $string = substr($string, 0, $breakpoint) . $pad;
+    }
+  }
+
+  return $string;
+}
+?>
+<div class="body">
+    <a href="<?php echo $this->baseUrl();?>/admin/events/add"><i class="icon-pencil"></i> New event<a/>
+    <table style="font-size:12px;" class="table">  
+            <thead>  
+              <tr>  
+                <th>#</th>
+                <th>Title</th> 
+                <th>Tag</th>  
+                <th>Date</th>
+                <th>Controls</th>                 
+              </tr>  
+            </thead>  
+            <tbody> 
+            <?php $i=1; foreach ($this->news as $value ) { ?>
+              <tr> 
+                <td><?php echo $i; ?></td>           
+                <td><?php echo myTruncate($value['title'], 20); ?></td>
+                <td><?php echo $value['tag']; ?></td>                
+                <td>
+                    <?php
+                    echo date('D, d M Y h:i', strtotime ($value['etime'])); 
+                    ?>
+                </td> 
+                <td>
+                    <a href="<?php echo $this->baseUrl();?>/admin/events/edit/nid/<?php echo $value['id'];?>" class="btn"><i class="icon-edit"></i></a>
+                    <a href="<?php echo $this->baseUrl();?>/admin/events/del/eid/<?php echo $value['id'];?>" class="btn" ><i class="icon-trash"></i></a>
+                </td> 
+              </tr> 
+              <?php $i++;}?>   
+            </tbody>  
+        </table>
+</div>
